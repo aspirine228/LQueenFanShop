@@ -1,0 +1,119 @@
+
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+  
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
+    height:100%;
+
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+/* Style the header */
+.header {
+    padding: 80px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+    font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    
+    text-align:left;
+    overflow: hidden;
+   
+
+    background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #1abc9c;
+    color: black;
+}
+
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+     background-color: #e0ffff;
+}
+
+/* Main column */
+.main {
+    flex: 70%;
+    background-color: white;
+  
+    padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+   
+    background-color: #ADD8E6;
+    width: 100%;
+    padding: 20px;
+}
+.footer {
+    width:100%;
+    padding: 20px; /* Some padding */
+    text-align: center; /* Center text*/
+    position: absolute;
+    bottom: 0;
+    height:120px;
+    background: #ddd; /* Grey background */
+}
+.footer a.right {
+    float: right;
+
+}
+
+.carousel-item {
+  height: 50vh;
+  min-height: 10px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

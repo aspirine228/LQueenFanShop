@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QueenFanShop.Helper\QueenFanShop.Helper.csproj" />
+    <ProjectReference Include="..\QueenFanShop.Models\QueenFanShop.Models.csproj" />
+  </ItemGroup>
+
+</Project>

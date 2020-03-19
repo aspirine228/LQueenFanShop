@@ -1,0 +1,34 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+
+     <title>QueenFanShop</title>
+     @Styles.Render("~/bundles/style/css")
+     @Styles.Render("~/bundles/bootstrap/css")
+
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          @Html.Partial("_NavBar")
+     </nav>
+     <header>
+          @Html.Partial("_Slider")
+     </header>
+
+     <div class="row">
+          <div class="side">
+               @Html.Partial("_Side")
+          </div>
+          <div class="main">
+               @RenderBody()
+          </div>
+     </div>
+     <div class="footer">
+          @Html.Partial("_Footer")
+     </div>
+</body>
+@Scripts.Render("~/bundles/jquery/js")
+@Scripts.Render("~/bundles/bootstrap/js")
+
+</html>
