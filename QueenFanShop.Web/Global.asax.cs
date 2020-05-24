@@ -15,9 +15,9 @@ namespace QueenFanShop.Web
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-           AreaRegistration.RegisterAllAreas();
-           RouteConfig.RegisterRoutes(RouteTable.Routes);
-               BundleConfig.RegisterBundle(BundleTable.Bundles);
+            AreaRegistration.RegisterAllAreas();
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundle(BundleTable.Bundles);
         }
     }
 }

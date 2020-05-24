@@ -5,11 +5,8 @@ using System.Web;
 
 namespace QueenFanShop.Web.Models
 {
-    public class ULoginData
+    public class UserData
     {
-        public string UserName { get; set; }
-        public string UserPassword { get; set; }
-
-
+        public ULoginData UserLogin { get; set; }
     }
 }

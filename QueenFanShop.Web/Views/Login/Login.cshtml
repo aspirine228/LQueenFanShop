@@ -1,9 +1,15 @@
 ﻿@{
     Layout = "~/Views/Shared/_Login.cshtml";
 }
+
+@model QueenFanShop.Web.Models.ULoginData
+
 <h2 class="text-center">Login with Social Media or Manually</h2>
 <div class="container">
-    <form action="/action_page.php">
+    @Html.ValidationSummary(true)
+    @using (Html.BeginForm("Auth", "Login", FormMethod.Post, new { @id = "AuthForm" }))
+    {
+        @Html.AntiForgeryToken()
         <div class="row">
 
             <div class="vl">
@@ -24,22 +30,36 @@
 
             <div class="col">
                 <div class="hide-md-lg">
-                    <p ">Or sign in manually:</p>
+                    <p>Or sign in manually:</p>
                 </div>
 
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="submit" value="Login">
+                @Html.TextBoxFor(u => u.UserName, new
+                {
+                   placeholder = "Username",
+                   name = "username",
+                   value = ""
+                })
+
+
+                @Html.TextBoxFor(u => u.UserPassword, new
+               {
+                  type = "password",
+                  placeholder = "Password",
+                  name = "password",
+                  value = ""
+               })
+                <button>Login</button>
             </div>
 
         </div>
-    </form>
+
+    }
 </div>
 
 <div class="bottom-container">
     <div class="row">
         <div class="col">
-            <a href="@Url.Action("Register","Register")" style="color:white" class="btn">Sign up</a>
+            <a href="@Url.Action("Register", "Register")" style="color:white" class="btn">Sign up</a>
         </div>
         <div class="col">
             <a href="#" style="color:white" class="btn">Forgot password?</a>
