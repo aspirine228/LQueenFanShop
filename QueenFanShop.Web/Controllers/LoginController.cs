@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using QueenFanShop.BuisnessLogic;
+using System.Web.UI.WebControls;
 
 namespace QueenFanShop.Web.Controllers
 {
@@ -27,23 +29,32 @@ namespace QueenFanShop.Web.Controllers
 
         public ActionResult Index()
         {
+        
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Auth(ULoginData data)
-        {
+        { UDbTable user;
+           /* if (ModelState.IsValid)
+            {
+                using (var db = new )
+                {
+                    user = db.Users.FirstOrDefault(u => u.Username == data.UserName);
+                }
+            }*/
             USessionData udata = new USessionData();
             udata.UserName = data.UserName;
             udata.UserPassword = data.UserPassword;
             udata.SessionDate = DateTime.Now;
-        //    var userLogin = _session.UserLogin(data);
+           //var userLogin = _session.UserLogin(data);
             ResponsMSG res = _session.GetUserSession(udata);
             if (res.Status)
             {
-                HttpCookie cookie = _session.GenCookie(data.UserName);
-                ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                HttpCookie httpcookie = _session.GenCookie(data.UserName);
+                HttpCookie cookie = httpcookie;
+               ControllerContext.HttpContext.Response.Cookies.Add(cookie);
 
                 return RedirectToAction("Index", "Home");
             }

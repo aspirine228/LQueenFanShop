@@ -6,14 +6,34 @@ using System.Text;
 
 namespace QueenFanShop.BuisnessLogic.Core
 {
-  public  class UserApi
+    public class UserApi
     {
-        public ResponsMSG UserSession(USessionData udata)
-        {
 
+
+        internal ResponsMSG UserSession(USessionData udata)
+        {
+            UDbTable user;
+
+            using (var db = new UserContext())
+            {
+
+                user = db.Users.FirstOrDefault(u => u.Username == udata.Credential);
+            }
+
+            using (var db = new UserContext())
+            {
+                user = (from u in db.Users where u.Username == udata.Credential select u).FirstOrDefault();
+            }
+
+
+            if (user != null)
+            {
+
+            }
 
 
             return new ResponsMSG();
         }
+
     }
 }

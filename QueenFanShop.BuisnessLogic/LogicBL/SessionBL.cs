@@ -6,10 +6,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using System.Threading.Tasks;
+using System.Linq;
+using QueenFanShop.BuisnessLogic;
+using System.Web;
+using System.Web.Mvc;
+
 namespace QueenFanShop.BuisnessLogic.LogicBL
+
 {
-    class SessionBL:UserApi,ISession
-    {
+
+
+  public  class SessionBL:UserApi,ISession
+    { 
+        public HttpCookie GenCookie (string UserName)
+        {
+            throw new NotImplementedException();
+        }
         public ResponsMSG GetUserSession(USessionData udata)
         {
             return UserSession(udata);

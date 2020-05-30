@@ -12,14 +12,14 @@ namespace QueenFanShop.BuisnessLogic.DBModel
     {
         public virtual DbSet<UDbTable> Users { get; set; }
 
-        public UserContext()
+        public UserContext() 
         {
             Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=mssqlserver02;Database=queenshop;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=win-29uoc7fsja6\mssqlserver02;Database=queenshop;Trusted_Connection=True;");
         }
     }
 }
